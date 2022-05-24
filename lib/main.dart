@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Widgets/ProductsGrid.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -31,9 +33,17 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
+    return Scaffold(backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(widget.title),
+      ),
+      body: Column(crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height:  MediaQuery.of(context).size.shortestSide*0.02,),
+          Container(margin: EdgeInsets.only(left: MediaQuery.of(context).size.shortestSide*0.02),child: Text("Shopping Cart",style: TextStyle(fontSize: MediaQuery.of(context).size.shortestSide*0.02,fontWeight: FontWeight.bold),)),
+
+          Expanded(child: ProductsGrid()),
+        ],
       ),
 
     );

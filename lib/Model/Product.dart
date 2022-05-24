@@ -1,10 +1,11 @@
 class Product {
   String? name;
+  String? img;
   int? id;
   double? price;
   Discount? discount;
 
-  Product({this.name, this.id, this.price, this.discount});
+  Product({this.name, this.id, this.price, this.discount,this.img});
 
   Product.fromJson(Map<String, dynamic> json) {
     name = json['name'];
